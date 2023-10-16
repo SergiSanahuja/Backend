@@ -6,13 +6,20 @@
     <link rel="stylesheet" href="../registre.css">
 </head>
 <body>
-    
+    <h2>Registre</h2>
 <form action="../controlador/registre.php" method="post">
     <input type="text" name="nom" value="<?php if (isset($_POST['nom'])) { echo htmlentities($_POST['nom']); } ?>"> <label for="nom">nom</label><br>
     <input type="email" name="email"> <label for="email">email</label><br>
     <input type="password" name="password"> <label for="password">password</label><br>
     <input type="submit" value="Registre"> 
-    <button name="cancel">cancel</button>
+    <a href="../controlador/index.php"><button type="button">cancel·lar</button></a>
+    <div class="error">
+        <?php
+        if(isset($Error['error'])){
+            echo $Error['error'];
+        }
+        ?>
 </form>
+</div>
 </body>
 </html>
