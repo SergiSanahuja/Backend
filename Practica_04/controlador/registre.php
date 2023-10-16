@@ -37,10 +37,27 @@
 
 //Funció per verificar que les dades introduides siguin correctes
     function verificar($nom, $email, $password){
-        $n = $n = $p = false;
+        $n = $e = $p = false;
     
         if(empty($nom) || empty($email) || empty($password) || $nom == null || $email == null || $password == null){
-            return false;
+            if (preg_match("/^[a-zA-Z ]*$/",$nom)) {
+                $n = true;
+            }
+           
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $e = true;
+            }
+           
+            if (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/",$password)) {
+                $p = true;    
+            }     
+           
+            if($n && $e && $p){
+                return true;
+            }else{
+                    return false;
+                }
+
         }else{
             return true;
         }
