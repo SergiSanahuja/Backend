@@ -1,6 +1,19 @@
 <?php
 
 //Funcio que retorna la llista de tots els articles
+
+function connection(){
+    try{
+        $conection = new PDO('mysql:host=localhost;dbname=pt04_sergi_sanahuja', 'root', '');
+        return $conection;
+    } catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        return false;
+        
+    }
+}
+
+
  function select($conection , $inici, $paginaActual, $_POSTSperPagina){
     $sql = "SELECT * FROM `articles`";
 
@@ -43,7 +56,7 @@
  }
 
  function insertarUsuari($nom, $email, $password){
-    $conection = new PDO('mysql:host=localhost;dbname=pt04_sergi_sanahuja', 'root', '');
+    $conection = connection();
     $sql = "INSERT INTO `usuaris`(`Usuari`, `Contrasenya`, `correu`) VALUES ('$nom', '$password', '$email')";
     $statmet = $conection->prepare($sql);
     $statmet -> execute();
@@ -52,7 +65,7 @@
  function comprovarUsuari($email, $password){
     try{
 
-        $conection = new PDO('mysql:host=localhost;dbname=pt04_sergi_sanahuja', 'root', '');
+        $conection = connection();
         
         $sql = "SELECT * FROM `usuaris` WHERE `correu` = '$email'";
         $statmet = $conection->prepare($sql);
