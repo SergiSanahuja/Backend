@@ -8,7 +8,7 @@
 <body>
     
 <form action="../controlador/registre.php" method="post">
-    <input type="text" name="nom"> <label for="nom">nom</label><br>
+    <input type="text" name="nom" value="<?php if (isset($_POST['nom'])) { echo htmlentities($_POST['nom']); } ?>"> <label for="nom">nom</label><br>
     <input type="email" name="email"> <label for="email">email</label><br>
     <input type="password" name="password"> <label for="password">password</label><br>
     <input type="submit" value="Registre"> 
