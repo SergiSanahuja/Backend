@@ -13,6 +13,7 @@
     <input type="email" name="email" value="<?php if (isset($_POST['email'])) { echo htmlentities($_POST['email']); } ?>"> <label for="email">email</label><br>
     <input type="password" name="password" > <label for="password">password</label><br>
     <input type="submit" value="Registre"> 
+    
     <a href="../vista/index.vista.php"><button type="button">cancel·lar</button></a>
     <div class="error">
         <?php

@@ -16,6 +16,7 @@
         <input type="email" name="email"> <label for="email">email</label><br>
         <input type="password" name="password"> <label for="password">password</label><br>
         <input type="submit" value="login"> 
+        <button type="button">Recuperar contrasenya</button>
         <a href="../vista/index.vista.php"><button type="button">cancel·lar</button></a> 
     </form>
 </form>
