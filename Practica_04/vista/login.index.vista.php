@@ -30,14 +30,14 @@
 		<section class="paginacio">
 			<ul>
 				<?php if ($paginaActual == 1): ?>
-				<li class="disabled"><a href="index.vista.php?pagina=<?php echo $paginaActual - 1 ?>" onclick=<?php comprovarPagina($paginaActual,$numeroPagines) ?>> &laquo;</a></li>
+				<li class="disabled"><a href="login.index.vista.php?pagina=<?php echo $paginaActual - 1 ?>" onclick=<?php comprovarPagina($paginaActual,$numeroPagines) ?>> &laquo;</a></li>
 				<?php else: ?>
-				<li><a href="index.vista.php">&laquo;</a></li>
+				<li><a href="login.index.vista.php">&laquo;</a></li>
 				<?php endif ?>
 
 
-				<?php echo $li?>
-				<li class="disabled"><a href="index.vista.php?pagina=<?php echo $paginaActual + 1 ?>"  onclick=<?php comprovarPagina($paginaActual,$numeroPagines) ?>>&raquo;</a></li>
+				<?php echo $buttonLogin?>
+				<li class="disabled"><a href="login.index.vista.php?pagina=<?php echo $paginaActual + 1 ?>"  onclick=<?php comprovarPagina($paginaActual,$numeroPagines) ?>>&raquo;</a></li>
 			</ul>
 		</section>
 	</div>

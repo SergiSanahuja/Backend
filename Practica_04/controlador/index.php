@@ -6,9 +6,7 @@ require '../model/model.php';
 
 // Ens connectem a la base de dades	
 try{
-    $conection = connection();   
-   
-
+    $conection = connection();  
     
 // Establim el numero de pagina en la que l'usuari es troba.
 # si no troba cap valor, assignem la pagina 1.
@@ -50,8 +48,10 @@ $llista = select($conection, $inici, $paginaActual, $_POSTSperPagina);
 
 // Comprovem que la pagina en la que es troba l'usuari no sigui més gran que el numero de pagines que tenim.
 # Si es més gran, rediriguim a la pagina 1.
-
+    //numeraciío de la paginació per quan l'usuari no està loguejat
     $li = button($paginaActual, $numeroPagines);      
+    //numeraciío de la paginació per quan l'usuari està loguejat
+    $buttonLogin = button_login($paginaActual, $numeroPagines);
     
 
 }catch(PDOException $e){
@@ -75,6 +75,23 @@ function button($paginaActual, $numeroPagines){
             $li .= "<li class='active'><a href='index.vista.php?pagina=$i'>$i</a></li>";
         }else{
             $li .= "<li><a href='index.vista.php?pagina=$i'>$i</a></li>";
+        }
+    }
+    
+
+    return $li;
+
+}
+
+//funció que posa els botons de la paginació quan l'usuari està loguejat
+function button_login($paginaActual, $numeroPagines){
+    $li = "";    
+    
+    for($i = 1; $i <= $numeroPagines; $i++){
+        if($paginaActual == $i){
+            $li .= "<li class='active'><a href='login.index.vista.php?pagina=$i'>$i</a></li>";
+        }else{
+            $li .= "<li><a href='login.index.vista.php?pagina=$i'>$i</a></li>";
         }
     }
     
