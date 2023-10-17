@@ -1,5 +1,5 @@
 <?php
-
+/************************Sergi Sanahuja********************** */
 //Funcio que retorna la llista de tots els articles
 
 function connection(){

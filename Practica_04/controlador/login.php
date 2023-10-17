@@ -1,4 +1,5 @@
 <?php    
+/********************Sergi Sanahuja******************** */
     session_start();
     require_once '../model/model.php';
     require_once '../vista/login.vista.php';
