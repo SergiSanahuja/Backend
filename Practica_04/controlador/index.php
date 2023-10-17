@@ -31,7 +31,7 @@ if($paginaActual > 1){
 
 // Preparem la consulta SQL  
     
-$llista = select($conection, $inici, $paginaActual, $_POSTSperPagina);   
+$llista = select($conection, $inici, $_POSTSperPagina);   
      
   
 // Comprovem que hagui articles, en cas contrari, rediriguim

@@ -13,8 +13,8 @@ function connection(){
     }
 }
 
-
- function select($conection , $inici, $paginaActual, $_POSTSperPagina){
+// Selecciona tot de la taula articles
+ function select($conection , $inici ,$_POSTSperPagina){
     $sql = "SELECT * FROM `articles`";
 
     $statmet = $conection->prepare($sql);
@@ -55,13 +55,15 @@ function connection(){
     
  }
 
+ //inserta un usuari a la base de dades
  function insertarUsuari($nom, $email, $password){
     $conection = connection();
     $sql = "INSERT INTO `usuaris`(`Usuari`, `Contrasenya`, `correu`) VALUES ('$nom', '$password', '$email')";
     $statmet = $conection->prepare($sql);
     $statmet -> execute();
  }
-
+ 
+ //comprova que l'usuari i la contrasenya siguin correctes
  function comprovarUsuari($email, $password){
     try{
 
@@ -91,6 +93,7 @@ function connection(){
     }
 }
 
+//comprova que el correu no est
 function comprovarCorreu($email){
     $conection = connection();
     $sql = "SELECT * FROM `usuaris` WHERE `correu` = '$email'";
