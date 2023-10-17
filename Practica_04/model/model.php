@@ -91,6 +91,21 @@ function connection(){
     }
 }
 
+function comprovarCorreu($email){
+    $conection = connection();
+    $sql = "SELECT * FROM `usuaris` WHERE `correu` = '$email'";
+    $statmet = $conection->prepare($sql);
+    $statmet -> execute();
+    $resultat = $statmet->fetchAll();
+    foreach($resultat as $fila){
+        if($fila['correu'] == $email){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
  
 
 

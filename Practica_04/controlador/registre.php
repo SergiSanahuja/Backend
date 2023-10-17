@@ -11,18 +11,23 @@
     if($_SERVER['PHP_SELF']){
         //Comprovem que les dades siguin correctes
             if(verificar($nom, $email, $password)){
-                
-                //encriptar password
-                $password = md5($password);
-            
-                //insertar usuari
-                insertarUsuari($nom, $email, $password);
-                
-                $_SESSION['nom'] = $nom;
-                $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
+                if(comprovarCorreu($email)){
+                    $Error['error'] = "El correu ja existeix";
 
-                header("Location: ../vista/login.vista.php");
+                }else{
+                
+                    //encriptar password
+                    $password = md5($password);
+                
+                    //insertar usuari
+                    insertarUsuari($nom, $email, $password);
+                    
+                    $_SESSION['nom'] = $nom;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['password'] = $password;
+
+                    header("Location: ../vista/login.vista.php");
+                }
             }else{
                 
                 $Error['error'] = "Error en el registre";
