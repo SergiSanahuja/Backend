@@ -12,7 +12,7 @@
         //Comprovar si l'usuari existeiex y si la contrasenya es correcte
         if( comprovarUsuari($email, $password) ){
             //$_SESSION['email'] = $email;
-            header('Location: ../controlador/index.php');
+            header('Location: ../vista/login.index.vista.php');
         }else{
             echo "Usuari o contrasenya incorrectes";
         }
@@ -21,7 +21,7 @@
     }
     
     function cancel(){
-        header('Location: ../controlador/index.php');
+        header('Location: ../controlador/index.vista.php');
     }
     
 

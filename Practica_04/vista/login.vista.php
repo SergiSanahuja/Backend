@@ -15,7 +15,7 @@
         <input type="email" name="email"> <label for="email">email</label><br>
         <input type="password" name="password"> <label for="password">password</label><br>
         <input type="submit" value="login"> 
-        <a href="../controlador/index.php"><button type="button">cancel·lar</button></a> 
+        <a href="../vista/index.vista.php"><button type="button">cancel·lar</button></a> 
     </form>
 </form>
 </body>

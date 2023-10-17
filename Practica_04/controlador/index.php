@@ -6,8 +6,7 @@ require '../model/model.php';
 
 // Ens connectem a la base de dades	
 try{
-    $conection = new PDO('mysql:host=localhost;dbname=pt04_sergi_sanahuja', 'root', '');
-    
+    $conection = connection();   
    
 
     
@@ -39,7 +38,7 @@ $llista = select($conection, $inici, $paginaActual, $_POSTSperPagina);
   
 // Comprovem que hagui articles, en cas contrari, rediriguim
     if(!$llista){
-        header('Location: index.php?pagina=1');
+        header('Location: index.vista.php?pagina=1');
     }
 
 // Calculem el total d'articles per a poder conèixer el número de pàgines de la paginació
@@ -63,7 +62,7 @@ $llista = select($conection, $inici, $paginaActual, $_POSTSperPagina);
 //comprova que al fer click a la pagina no sigui més gran que el numero de pagines que tenim.
 function comprovarPagina($paginaActual, $numeroPagines){
     if($paginaActual > $numeroPagines || $paginaActual < 1){
-        header('Location: index.php?pagina=1');
+        header('Location: index.vista.php?pagina=1');
     }
 }
 
@@ -73,9 +72,9 @@ function button($paginaActual, $numeroPagines){
     
     for($i = 1; $i <= $numeroPagines; $i++){
         if($paginaActual == $i){
-            $li .= "<li class='active'><a href='index.php?pagina=$i'>$i</a></li>";
+            $li .= "<li class='active'><a href='index.vista.php?pagina=$i'>$i</a></li>";
         }else{
-            $li .= "<li><a href='index.php?pagina=$i'>$i</a></li>";
+            $li .= "<li><a href='index.vista.php?pagina=$i'>$i</a></li>";
         }
     }
     
@@ -84,6 +83,7 @@ function button($paginaActual, $numeroPagines){
 
 }
 
-require '../vista/index.vista.php';
+//include_once '../vista/index.vista.php';
+
 
 ?>
