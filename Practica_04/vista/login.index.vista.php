@@ -17,7 +17,7 @@
 	</script>
 
 </head>
-<?php include_once "../controlador/index.php" ?>
+<?php include_once "../controlador/controlador.php" ?>
 <body>
 	
 	<div class="contenidor">	

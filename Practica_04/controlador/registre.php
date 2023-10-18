@@ -27,7 +27,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
 
-                    header("Location: ../vista/login.vista.php");
+                    header("Location: ../vista/login.php");
                 }
             }else{
                 

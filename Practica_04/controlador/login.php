@@ -22,7 +22,7 @@
     }
     
     function cancel(){
-        header('Location: ../controlador/index.vista.php');
+        header('Location: ../vista/index.php');
     }
     
 

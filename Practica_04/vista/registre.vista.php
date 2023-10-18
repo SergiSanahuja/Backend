@@ -14,7 +14,7 @@
     <input type="password" name="password" > <label for="password">password</label><br>
     <input type="submit" value="Registre"> 
     
-    <a href="../vista/index.vista.php"><button type="button">cancel·lar</button></a>
+    <a href="../vista/index.php"><button type="button">cancel·lar</button></a>
     <div class="error">
         <?php
         if(isset($Error['error'])){
