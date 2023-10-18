@@ -1,3 +1,4 @@
+<!--Sergi Sanahuja-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,13 +25,14 @@
 
 
 <?php
-
-
+    //Comprovem que el formulari s'ha enviat
     if(isset($_POST['email'])){
 
-        $email = $_POST['email'];
 
+        $email = $_POST['email'];
+        //Comprovem que les dades siguin correctes
         if(comprovarCorreu($email)){
+            //enviar email
             sendEmail($email,"Recuperar contrasenya. <br>Hola, has demanat recuperar la contrasenya ve a aquest enllaç per recuperar-la: http://localhost/Backend/Practiques/Practica_04/controlador/sendEmail.php");
             
         }else{

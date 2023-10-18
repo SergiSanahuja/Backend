@@ -1,4 +1,5 @@
 <!--  Sergi sanahuja  -->
+<!--La vista del formulari de login-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
