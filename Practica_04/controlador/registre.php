@@ -7,6 +7,8 @@
     $email = isset($_POST['email'])? $_POST['email'] : null;
     $password = isset($_POST['password'])? $_POST['password'] : null;
 
+    
+
     echo verificar($nom, $email, $password);
     //Comprovem que el formulari s'ha enviat
     if($_SERVER['PHP_SELF']){
@@ -27,7 +29,7 @@
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $password;
 
-                    header("Location: ../vista/login.vista.php");
+                    header("Location: ../vista/login.index.vista.php");
                 }
             }else{
                 

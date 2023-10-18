@@ -9,6 +9,9 @@
         $email = $_POST['email'];
         $password = $_POST['password'];      
         echo md5($password);
+
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
         
         //Comprovar si l'usuari existeiex y si la contrasenya es correcte
         if( comprovarUsuari($email, $password) ){
