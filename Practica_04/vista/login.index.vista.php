@@ -45,7 +45,9 @@
 			</ul>
 		</section>
 		<div>
-			<a href="insert.vista.php">hola</a>
+			<a href="insert.vista.php"><button type="button">INSERTAR</button></a>
+			<button>DELETE</button>
+			<button>UPDATE</button>
 		</div>
 	</div>
 
