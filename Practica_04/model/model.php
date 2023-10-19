@@ -62,6 +62,14 @@ function connection(){
     $statmet = $conection->prepare($sql);
     $statmet -> execute();
  }
+
+ //insertar articles a la base de dades
+ function insertarArticle($article){
+    $conection = connection();
+    $sql = "INSERT INTO `articles`(`Article`) VALUES ('$article')";
+    $statmet = $conection->prepare($sql);
+    $statmet -> execute();
+}
  
  //comprova que l'usuari i la contrasenya siguin correctes
  function comprovarUsuari($email, $password){

@@ -26,8 +26,7 @@
 		<h1>Articles</h1>
 		<section class="articles"> <!--aqui guardem els articles-->
 			<ul name = "llista">
-				<?php echo $llista ?>  <!--aqui primta els articles-->
-				
+				<?php echo $llista ?>  <!--aqui primta els articles-->				
 			</ul>
 		</section>
 
