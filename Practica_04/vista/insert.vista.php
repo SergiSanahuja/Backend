@@ -8,7 +8,7 @@
 <script src="../javaScript/insert.js"></script>
 <body>
 
-
+ 
 
 <div class="form-body">
         <div class="row">
@@ -17,18 +17,18 @@
                     <div class="form-items">
                         <h3>Insertar article</h3>
                         <p>Afageix el teu article.</p>
-                        <form action="../controlador/articles.php" class="requires-validation" novalidate>                        
+                        <form action="../controlador/articles.php" method="post" class="requires-validation" novalidate>                        
                         
                             <div class="col-md-13">
                                 <textarea name="article" id="article" cols="30" rows="10"></textarea>                  
 
                                 <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Insertar</button>
+                                <button id="submit" type="submit" class="btn btn-primary" onclick="">Insertar</button>
                             </div>
                         
 
                             <div class="form-button mt-3">
-                                <a href="../vista/login.index.vista.php"><button type="button">cancel·lar</button></a>
+                                <a href="../vista/login.index.vista.php"><button type="button" >cancel·lar</button></a>
                             </div>
 
                             <div id="result">
@@ -37,6 +37,14 @@
 
 
                         </form>
+                        <?php 
+
+                            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                                insertar() ;
+
+                            }
+                        
+                        ?>
                     </div>
                 </div>
             </div>

@@ -29,8 +29,8 @@ if($paginaActual > 1){
     $inici = 0;
 }
 
-// Preparem la consulta SQL  
-    
+// Preparem la consulta SQL     
+
 $llista = select($conection, $inici, $_POSTSperPagina);   
      
   
