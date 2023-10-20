@@ -3,6 +3,8 @@
     session_start();
     require_once '../model/model.php';
 
+    $_SESSION['login'] = true;
+
     $nom = isset($_POST['nom'])? $_POST['nom'] : null;
     $email = isset($_POST['email'])? $_POST['email'] : null;
     $password = isset($_POST['password'])? $_POST['password'] : null;

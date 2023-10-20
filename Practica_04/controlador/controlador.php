@@ -1,5 +1,8 @@
 <?php 
 /*****************Sergi Sanahuja*******************/
+    session_start();
+
+   
 
 require '../model/model.php';
 
@@ -29,9 +32,16 @@ if($paginaActual > 1){
     $inici = 0;
 }
 
-// Preparem la consulta SQL     
+// Preparem la consulta SQL
 
-$llista = select($conection, $inici, $_POSTSperPagina);   
+if ($_SESSION['login']){
+     $llista = select($conection, $inici, $_POSTSperPagina, $_SESSION['login']);
+}else{
+     $llista = select($conection, $inici, $_POSTSperPagina, $_SESSION['login']); 
+}  
+
+
+  
      
   
 // Comprovem que hagui articles, en cas contrari, rediriguim

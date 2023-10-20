@@ -14,7 +14,7 @@ function connection(){
 }
 
 // Selecciona tot de la taula articles
- function select($conection , $inici ,$_POSTSperPagina, $login = false){
+ function select($conection , $inici ,$_POSTSperPagina, $login){
     try{
         $sql = "SELECT * FROM `articles`";
 
@@ -31,12 +31,12 @@ function connection(){
         if ($login){
             foreach($resultat as $fila){
                 if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){
-                    $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."</li>";
-        
+                    $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."<button>DELETE</button> <button>UPDATE</button></li> ";
                 }else{
                     $llista .= "";
                 }
             }
+            
         }else{
             foreach($resultat as $fila){
                     if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){

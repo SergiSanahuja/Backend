@@ -4,7 +4,8 @@
     require_once '../model/model.php';
     require_once '../vista/login.vista.php';
 
-         
+    $_SESSION['login'] = true;
+        
     if(isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];      
