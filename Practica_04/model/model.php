@@ -127,12 +127,14 @@ function connection(){
         $resultat = $statmet->fetchAll();
         foreach($resultat as $fila){
             if($fila['correu'] == $email){
-                if(md5($password) == $fila['Contrasenya']){
-                    return true;
-                }else{
-                    return false;
-                }
+                // if(md5($password) == $fila['Contrasenya']){
+                //     return true;
+                // }else{
+                //     return false;
+                // }
                 
+                return password_verify($password, $fila['Contrasenya']);
+
             }else{
                 throw new Exception("Usuari incorrecte");
                 

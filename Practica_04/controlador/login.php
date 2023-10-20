@@ -8,7 +8,7 @@
     if(isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];      
-        echo md5($password);
+        
 
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
@@ -19,6 +19,7 @@
             header('Location: ../vista/login.index.vista.php');
         }else{
             echo "Usuari o contrasenya incorrectes";
+            echo "$password";
         }
 
         

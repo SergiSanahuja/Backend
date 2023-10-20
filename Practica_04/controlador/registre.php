@@ -20,7 +20,8 @@
                 }else{
                 
                     //encriptar password
-                    $password = md5($password);
+                   // $password = md5($password);
+                    $password = password_hash($password, PASSWORD_BCRYPT);
                 
                     //insertar usuari
                     insertarUsuari($nom, $email, $password);
