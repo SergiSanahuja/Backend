@@ -24,11 +24,13 @@
                                 <textarea name="article" id="article" cols="30" rows="10"></textarea>                  
 
                                 <div class="form-button mt-3">
+                                    <!-- insertar article a la BD -->
                                 <button id="submit" type="submit" class="btn btn-primary" onclick="">Insertar</button>
                             </div>
                         
 
                             <div class="form-button mt-3">
+                                <!-- Retornar a la vista de usuari login -->
                                 <a href="../vista/login.index.vista.php"><button type="button" >cancel·lar</button></a>
                             </div>
 

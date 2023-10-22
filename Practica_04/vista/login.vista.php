@@ -17,7 +17,9 @@
         <input type="email" name="email"> <label for="email">email</label><br>
         <input type="password" name="password"> <label for="password">password</label><br>
         <input type="submit" value="login"> 
+        <!-- Redirecció a recuperar contrasenya per enviar un correu -->
        <a href="../vista/recuperarContrasenya.vista.php"> <button type="button">He olvidat la contrasenya</button></a>
+       <!-- Redirecció a vista usuari anònim  -->
         <a href="../vista/index.php"><button type="button">cancel·lar</button></a> 
     </form>
 </form>

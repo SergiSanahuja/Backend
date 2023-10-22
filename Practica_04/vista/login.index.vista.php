@@ -23,7 +23,7 @@
 	  
 ?>
 <body>
-			
+			<!-- Redirecció al fitxer per a fer el sesion_destroy i después redirecciona a la vista de usuari anònim   -->
 			<a href="../controlador/tencar_sesio.php" ><button type="button" class="user-anonymous tnb-signup-btn w3-bar-item w3-button w3-right ws-green ws-hover-green ga-top ga-top-signup">Exit</button></a>
 			
 	<div class="contenidor">	
@@ -36,13 +36,14 @@
 
 		<section class="paginacio">
 			<ul>
+				<!-- Canviar el num de la pàgina per fletxa  -->
 				<?php if ($paginaActual == 1): ?>
 				<li class="disabled"><a href="login.index.vista.php?pagina=<?php echo $paginaActual - 1 ?>" onclick=<?php comprovarPagina($paginaActual,$numeroPagines) ?>> &laquo;</a></li>
 				<?php else: ?>
 				<li><a href="login.index.vista.php">&laquo;</a></li>
 				<?php endif ?>
 
-
+					<!-- botons paginació -->
 				<?php echo $buttonLogin?>
 				<li class="disabled"><a href="login.index.vista.php?pagina=<?php echo $paginaActual + 1 ?>"  onclick=<?php comprovarPagina($paginaActual,$numeroPagines) ?>>&raquo;</a></li>
 			</ul>

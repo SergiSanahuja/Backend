@@ -30,6 +30,7 @@
                         
 
                             <div class="form-button mt-3">
+                                <!-- Retornar a la vista usuari login  -->
                                 <a href="../vista/login.index.vista.php"><button type="button" >cancel·lar</button></a>
                             </div>
 
@@ -40,7 +41,7 @@
 
                         </form>
                         <?php 
-
+                            // Cuan es crida el metode POST es crida la funcio eliminar
                             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 if(isset($_POST['id'])){
                                     $id = $_POST['id'];
