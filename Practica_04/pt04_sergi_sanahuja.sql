@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2023 a las 15:10:22
+-- Tiempo de generación: 22-10-2023 a las 15:21:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -58,8 +58,7 @@ INSERT INTO `articles` (`Id`, `Article`) VALUES
 (17, '“El miedo es el camino hacia el lado oscuro.” – Yoda'),
 (18, '“¿De qué sirve tener miedo?” – Padmé Amidala'),
 (19, '“El miedo lleva a la ira, la ira lleva al odio, el odio lleva al sufrimiento.” – Yoda'),
-(20, '“Haz lo que debas hacer, no lo que te gustaría hacer.” – Obi-Wan Kenobi'),
-(21, 'hola');
+(20, '“Haz lo que debas hacer, no lo que te gustaría hacer.” – Obi-Wan Kenobi');
 
 -- --------------------------------------------------------
 
@@ -70,7 +69,7 @@ INSERT INTO `articles` (`Id`, `Article`) VALUES
 CREATE TABLE `usuaris` (
   `id` int(11) NOT NULL,
   `Usuari` varchar(10) NOT NULL,
-  `Contrasenya` varchar(20) NOT NULL,
+  `Contrasenya` varchar(500) NOT NULL,
   `correu` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -104,7 +103,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT de la tabla `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
