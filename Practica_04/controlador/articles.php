@@ -15,6 +15,7 @@ function insertar(){
 
     }else{
         insertarArticle($article);
+        header('Location: ../vista/login.index.vista.php');
     }
   
             

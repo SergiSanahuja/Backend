@@ -95,6 +95,19 @@ function connection(){
             die();
 }
 }
+
+//elimina un article de la base de dades
+function eliminarArticle($id){
+    try{
+        $conection = connection();
+        $sql = "DELETE FROM `articles` WHERE `Id` = '$id'";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
+}
  
  //comprova que l'usuari i la contrasenya siguin correctes
  function comprovarUsuari($email, $password){
