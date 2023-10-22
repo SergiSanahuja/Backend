@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../estils/estils.css"> <!-- feu referència al vostre fitxer d'estils -->
 	<title>Paginació</title>
 	
@@ -23,7 +24,7 @@
 ?>
 <body>
 			
-			<a href="../controlador/tencar_sesio.php"><button type="button">Exit</button></a>
+			<a href="../controlador/tencar_sesio.php" ><button type="button" class="user-anonymous tnb-signup-btn w3-bar-item w3-button w3-right ws-green ws-hover-green ga-top ga-top-signup">Exit</button></a>
 			
 	<div class="contenidor">	
 		<h1>Articles</h1>
@@ -48,8 +49,7 @@
 		</section>
 		<div>
 			<a href="insert.vista.php"><button type="button">INSERTAR</button></a>
-			<button>DELETE</button>
-			<button>UPDATE</button>
+			
 		</div>
 	</div>
 

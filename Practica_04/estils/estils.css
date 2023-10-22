@@ -162,24 +162,34 @@ h1 {
 }
 
 /***********************Button INSERT DELETE MODIFY**************/
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 30px;
+    border-radius: 4px;
+    display: inline-flex;;    
+    justify-content: flex-end;
+   
+}
 
 button{
-    background-color: #434e49;
-    color: #fff;
-    border: 0;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: 10px 50px;
+    background-color: #1f2020;
+    border: none;
+    color: white;
+    padding: 12px 16px;
     font-size: 16px;
-    font-weight: 400;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 20%;
-    outline: none !important;
+    cursor: pointer;
+    margin-left: 10%;
+    border-radius: 4px;
+    
 }
+
 
 button:hover{
     background-color: #04AA6D;
 }
+

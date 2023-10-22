@@ -41,7 +41,7 @@ if($paginaActual > 1){
     if ( isset($_SESSION['login'])  && $_SESSION['login'] == true){
         foreach($resultat as $fila){
             if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){
-                $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."<button>DELETE</button> <button>UPDATE</button></li> ";
+                $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."<button type='button' class='btn'><i class='fa fa-trash'></i></button> <button type='button' class='btn'><i class='fa fa-refresh'></i></button></li> ";
             }else{
                 $llista .= "";
             }
