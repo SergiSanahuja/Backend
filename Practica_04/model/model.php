@@ -108,6 +108,20 @@ function eliminarArticle($id){
         die();
     }
 }
+
+
+//modifica un article de la base de dades
+function modificarArticle($id, $article){
+    try{
+        $conection = connection();
+        $sql = "UPDATE `articles` SET `Article`= '$article' WHERE `Id` = '$id'";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
+}
  
  //comprova que l'usuari i la contrasenya siguin correctes
  function comprovarUsuari($email, $password){
