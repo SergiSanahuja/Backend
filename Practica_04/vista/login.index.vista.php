@@ -17,13 +17,14 @@
 	</script>
 
 </head>
-<?php include_once "../controlador/controlador.php"; 
-	  require_once "../controlador/tencar_sesio.php"
+<?php 
+      include_once "../controlador/controlador.php"; 
+	  
 ?>
 <body>
-			<a href="../vista/index.php" class="user-anonymous tnb-signup-btn w3-bar-item w3-button w3-right ws-green ws-hover-green ga-top ga-top-signup">
-				<button type="button" onclick="<?php tencarSessio() ?>">Exit</button>
-			</a>
+			
+			<a href="../controlador/tencar_sesio.php"><button type="button">Exit</button></a>
+			
 	<div class="contenidor">	
 		<h1>Articles</h1>
 		<section class="articles"> <!--aqui guardem els articles-->

@@ -1,5 +1,6 @@
 <?php
 /************************Sergi Sanahuja********************** */
+//session_start();
 //Funcio que retorna la llista de tots els articles
 
 function connection(){
@@ -14,7 +15,7 @@ function connection(){
 }
 
 // Selecciona tot de la taula articles
- function select($conection , $inici ,$_POSTSperPagina, $login){
+ function select($conection){
     try{
         $sql = "SELECT * FROM `articles`";
 
@@ -26,28 +27,8 @@ function connection(){
         
         $resultat = $statmet->fetchAll();
         
-        $llista = '';
-        
-        if ($login){
-            foreach($resultat as $fila){
-                if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){
-                    $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."<button>DELETE</button> <button>UPDATE</button></li> ";
-                }else{
-                    $llista .= "";
-                }
-            }
-            
-        }else{
-            foreach($resultat as $fila){
-                    if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){
-                        $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."</li>";
-
-                    }else{
-                        $llista .= "";
-                    }
-            }
-        }
-        return $llista;
+        return $resultat;        
+      
         
     }catch(Exception $e){
         echo "Error: " . $e->getMessage();

@@ -2,8 +2,7 @@
 /*****************Sergi Sanahuja*******************/
     session_start();
 
-   
-
+  
 require '../model/model.php';
 
 
@@ -34,17 +33,40 @@ if($paginaActual > 1){
 
 // Preparem la consulta SQL
 
-if ($_SESSION['login']){
-     $llista = select($conection, $inici, $_POSTSperPagina, $_SESSION['login']);
-}else{
-     $llista = select($conection, $inici, $_POSTSperPagina, $_SESSION['login']); 
-}  
 
+    $resultat = select($conection);
+
+    $llista = "";
+
+    if ( isset($_SESSION['login'])  && $_SESSION['login'] == true){
+        foreach($resultat as $fila){
+            if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){
+                $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."<button>DELETE</button> <button>UPDATE</button></li> ";
+            }else{
+                $llista .= "";
+            }
+        }
+        
+    }else{
+        foreach($resultat as $fila){
+                if($fila['Id'] > $inici && $fila['Id'] <= $inici + $_POSTSperPagina){
+                    $llista .= "<li>". $fila['Id'] . " - " . $fila['Article'] ."</li>";
+
+                }else{
+                    $llista .= "";
+                }
+        }
+    }
+    
 
   
      
   
 // Comprovem que hagui articles, en cas contrari, rediriguim
+   
+    if(!$llista && isset($_SESSION['login'])  && $_SESSION['login'] == true){
+        header('Location: login.index.php?pagina=1');
+    }else
     if(!$llista){
         header('Location: index.php?pagina=1');
     }
@@ -71,9 +93,16 @@ if ($_SESSION['login']){
 
 //comprova que al fer click a la pagina no sigui més gran que el numero de pagines que tenim.
 function comprovarPagina($paginaActual, $numeroPagines){
-    if($paginaActual > $numeroPagines || $paginaActual < 1){
-        header('Location: index.php?pagina=1');
+    if(isset($_SESSION['login'])  && $_SESSION['login'] == true){
+        if($paginaActual > $numeroPagines || $paginaActual < 1){
+            header('Location: login.index.vista.php?pagina=1');
+        }
+    }else{
+        if($paginaActual > $numeroPagines || $paginaActual < 1){
+            header('Location: index.php?pagina=1');
+        }
     }
+   
 }
 
 // Funcio que posa els botons de la paginació 

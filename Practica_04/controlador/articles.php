@@ -1,6 +1,7 @@
 <?php
 /************************Sergi Sanahuja********************** */
 require_once '../model/model.php';
+session_start();
 
 
 function insertar(){
