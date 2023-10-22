@@ -1,9 +1,11 @@
 <?php
-
+/********************Sergi Sanahuja******************** */
 require_once '../model/model.php';
 
+//modificar article
 function modificar(){
 
+    //comprovar que id i article no estiguin buits
     if (isset($_POST['id']) && isset($_POST['article'])) {
         $id = $_POST['id'];
         $article = $_POST['article'];

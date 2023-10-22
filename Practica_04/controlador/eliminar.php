@@ -1,7 +1,10 @@
 <?php
+/********************Sergi Sanahuja******************** */
 require_once '../model/model.php';
+
+//eliminar article
 function eliminar($id){
-   
+   //comprovar que id estigui setejat
     $id = isset($_POST['id'])? $_POST['id'] : null;
     
     if($id == null || $id == ""){
