@@ -9,6 +9,8 @@ require '../model/model.php';
 // Ens connectem a la base de dades	
 try{
     $conection = connection();  
+
+    
     
 // Establim el numero de pagina en la que l'usuari es troba.
 # si no troba cap valor, assignem la pagina 1.
@@ -81,8 +83,10 @@ if($paginaActual > 1){
 // Comprovem que la pagina en la que es troba l'usuari no sigui més gran que el numero de pagines que tenim.
 # Si es més gran, rediriguim a la pagina 1.
     //numeraciío de la paginació per quan l'usuari no està loguejat
+
     $li = button($paginaActual, $numeroPagines);      
     //numeraciío de la paginació per quan l'usuari està loguejat
+
     $buttonLogin = button_login($paginaActual, $numeroPagines);
     
 

@@ -12,6 +12,7 @@
     <h2>
      Login
     </h2>
+    
     <form action="../controlador/login.php" method="post">
 
         <input type="email" name="email"> <label for="email">email</label><br>

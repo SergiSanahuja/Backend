@@ -33,7 +33,9 @@
         //Comprovem que les dades siguin correctes
         if(comprovarCorreu($email)){
             //enviar email
-            sendEmail($email,"Canviar contrasenya. <br>Hola, has demanat recuperar la contrasenya ve a aquest enllaç per recuperar-la: http://localhost/Backend/Practiques/Practica_04/controlador/sendEmail.php");
+            $token = uniqid();
+            insertarToken($token);
+            sendEmail($email,"Canviar contrasenya. <br>Hola, has demanat recuperar la contrasenya ve a aquest enllaç per recuperar-la: http://localhost/Backend/Practiques/Practica_04/controlador/sendEmail.php?token=$token");
             
         }else{
             header('Location: ../vista/recuperarContrasenya.vista.php?error=Email incorrecte');

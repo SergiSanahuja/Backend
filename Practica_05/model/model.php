@@ -5,7 +5,7 @@
 
 function connection(){
     try{
-        $conection = new PDO('mysql:host=localhost;dbname=pt04_sergi_sanahuja', 'root', '');
+        $conection = new PDO('mysql:host=localhost;dbname=pt05_sergi_sanahuja', 'root', '');
         return $conection;
     } catch(Exception $e){
         echo "Error: " . $e->getMessage();
@@ -171,7 +171,18 @@ function comprovarCorreu($email){
     }
 }
 
- 
+ //insertar token 
+ function insertarToken($token){
+    try{
+        $conection = connection();
+        $sql = "INSERT INTO `usuaris`(`token`) VALUES ('$token')";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
+ }
 
 
 ?>

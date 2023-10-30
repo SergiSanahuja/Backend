@@ -46,7 +46,7 @@ function sendEmail($email, $mensaje){
 
         //Content
         $mail->isHTML(true);                                         //Set email format to HTML
-        $mail->Subject = 'Here is the subject';                      //Assumpte
+        $mail->Subject = 'Change the password';                      //Assumpte
         $mail->Body    = $mensaje;                                     //Cos del missatge
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients'; //Per si el client no pot llegir html
 
