@@ -34,8 +34,9 @@
         if(comprovarCorreu($email)){
             //enviar email
             $token = uniqid();
-            insertarToken($token);
-            sendEmail($email,"Canviar contrasenya. <br>Hola, has demanat recuperar la contrasenya ve a aquest enllaç per recuperar-la: http://localhost/Backend/Practiques/Practica_04/controlador/sendEmail.php?token=$token");
+            $id = getId($email);
+            insertarToken($token, $email);
+            sendEmail($email,"Canviar contrasenya. <br>Hola, has demanat recuperar la contrasenya ve a aquest enllaç per recuperar-la: http://localhost/Backend/Practiques/Practica_05/controlador/canviarContrasenya.php?id=". $id . "&token=" . $token);
             
         }else{
             header('Location: ../vista/recuperarContrasenya.vista.php?error=Email incorrecte');

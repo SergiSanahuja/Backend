@@ -14,6 +14,7 @@
         <h2>Recuperar Contrasenya</h2>
         <div class="row">
             <div class="col-sm-4">
+                <form action="../controlador/canviarContrasenya.php" method="post">
                 <label>New Password</label>
                 <div class="form-group pass_show"> 
                     <input type="password" value="faisal.khan@123" class="form-control" placeholder="New Password"> 
@@ -22,6 +23,11 @@
                 <div class="form-group pass_show"> 
                     <input type="password" value="faisal.khan@123" class="form-control" placeholder="Confirm Password"> 
                 </div> 
+                
+                <input type="submit" value="Enviar">
+
+                <a href="../vista/login.vista.php"><button type="button">cancel·lar</button></a>
+                </form>
                 
             </div>  
         </div>

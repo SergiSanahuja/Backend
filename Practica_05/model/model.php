@@ -171,13 +171,58 @@ function comprovarCorreu($email){
     }
 }
 
- //insertar token 
- function insertarToken($token){
+function modificarContrasenya($password , $email){
     try{
         $conection = connection();
-        $sql = "INSERT INTO `usuaris`(`token`) VALUES ('$token')";
+        $sql = "UPDATE `usuaris` SET `Contrasenya`= '$password' WHERE `correu` = '$email'";
         $statmet = $conection->prepare($sql);
         $statmet -> execute();
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
+}
+
+ //insertar token 
+ function insertarToken($token , $email){
+    try{
+        $conection = connection();
+        $sql = "UPDATE `usuaris` SET `Token`='$token' WHERE correu = '$email'";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
+ }
+
+ function getId($email){
+    try{
+        $conection = connection();
+        $sql = "SELECT `Id` FROM `usuaris` WHERE `correu` = '$email'";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+        $resultat = $statmet->fetchAll();
+        foreach($resultat as $fila){
+            $id = $fila['Id'];
+        }
+        return $id;
+ }
+    catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
+    }
+
+ function comprovarToken($token){
+    try{
+        $conection = connection();
+        $sql = "SELECT * FROM `usuaris` WHERE `token` = '$token'";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+        $resultat = $statmet->fetchAll();
+
+        return $resultat;
     }catch(Exception $e){
         echo "Error: " . $e->getMessage();
         die();
