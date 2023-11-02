@@ -171,10 +171,10 @@ function comprovarCorreu($email){
     }
 }
 
-function modificarContrasenya($password , $email){
+function modificarContrasenya($password , $id){
     try{
         $conection = connection();
-        $sql = "UPDATE `usuaris` SET `Contrasenya`= '$password' WHERE `correu` = '$email'";
+        $sql = "UPDATE `usuaris` SET `Contrasenya`= '$password' WHERE `id` = '$id'";
         $statmet = $conection->prepare($sql);
         $statmet -> execute();
     }catch(Exception $e){
@@ -222,7 +222,15 @@ function modificarContrasenya($password , $email){
         $statmet -> execute();
         $resultat = $statmet->fetchAll();
 
-        return $resultat;
+        foreach($resultat as $fila){
+            if($fila['Token'] == $token){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+       
     }catch(Exception $e){
         echo "Error: " . $e->getMessage();
         die();
