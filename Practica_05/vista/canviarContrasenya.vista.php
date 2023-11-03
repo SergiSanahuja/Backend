@@ -17,11 +17,11 @@
                 <form action="../controlador/canviarContrasenya.php" method="post">
                 <label>New Password</label>
                 <div class="form-group pass_show"> 
-                    <input type="password" value="faisal.khan@123" class="form-control" placeholder="New Password"> 
+                    <input type="password" name="password1" value="faisal.khan@123" class="form-control" placeholder="New Password"> 
                 </div> 
                 <label>Confirm Password</label>
                 <div class="form-group pass_show"> 
-                    <input type="password" value="faisal.khan@123" class="form-control" placeholder="Confirm Password"> 
+                    <input type="password" name="password2" value="faisal.khan@123" class="form-control" placeholder="Confirm Password"> 
                 </div> 
                 
                 <input type="submit" value="Enviar">

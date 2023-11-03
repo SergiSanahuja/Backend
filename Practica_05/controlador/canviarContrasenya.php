@@ -1,37 +1,38 @@
 <?php      
-
+session_start();
 require_once '../model/model.php';
-include_once '../vista/canviarContrasenya.vista.php';
 
 
-echo $_GET['id'];
+
 //Comprovem que el formulari s'ha enviat
+if (isset($_GET['id'], $_GET['token'])){
+    $_SESSION['id'] = $_GET['id'];
+    $_SESSION['token'] = $_GET['token'];    
+};
 
-    //Comprovem que les dades siguin correctes
 
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $token = $_GET['token'];
-        if (comprovarToken($token)) {
-
-            //todo Entra al codi pero automaticament es redirigeix a la pagina login.vista.php, s'ha de fer que es quedi a la mateixa pagina i que es pugui canviar la contrasenya
-            $password = $_POST['password'];
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            modificarContrasenya($password,$id);
-            header('Location: ../vista/login.vista.php');
-
-        } else {
-            header('Location: ../vista/canviarContrasenya.vista.php?error=Token incorrecte');
-        }
+//Comprovem que les dades siguin correctes
+if(isset($_POST['password1'] , $_POST['password2'])){
+    if($_POST['password1'] == $_POST['password2']){
+        $password = $_POST['password1'];
+        $password = password_hash($password, PASSWORD_BCRYPT);
+        modificarContrasenya($password,$_SESSION['id']);
+        
+        sleep(3);
+        header("Location: ../vista/login.vista.php");
+    }else{
+        echo "Les contrasenyes no coincideixen";
     }
+}
 
 
 if(isset($_GET['error'])){
     echo "<br>";                
     echo $_GET['error'];
 }
-    
 
+
+include_once '../vista/canviarContrasenya.vista.php';
 
 
 
