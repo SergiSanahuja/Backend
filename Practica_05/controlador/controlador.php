@@ -61,12 +61,30 @@ if($paginaActual > 1){
     }
     
 
-  
+  // Temsps de sessio per a l'usuari loguejat
+    if( isset($_SESSION['login']) && $_SESSION['login'] == true){
+
+        $inactividad = 3600;
+
+        if(isset($_SESSION["timeout"])){
+            // Calcular el tiempo de vida de la sesión (TTL = Time To Live)
+            $sessionTTL = time() - $_SESSION["timeout"];
+            if($sessionTTL > $inactividad){
+                session_unset();
+                session_destroy();
+                header("Location: ../vista/index.php");
+            }
+        }
+       
+        $_SESSION["timeout"] = time();;
+    }
      
   
 // Comprovem que hagui articles, en cas contrari, rediriguim
    
     if(!$llista && isset($_SESSION['login'])  && $_SESSION['login'] == true){
+
+
         header('Location: login.index.php?pagina=1');
     }else
     if(!$llista){
