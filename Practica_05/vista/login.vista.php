@@ -12,6 +12,14 @@
     <h2>
      Login
     </h2>
+
+    <div class="error">
+            <?php
+            if(isset($_GET['error'])){                
+                echo $_GET['error'];
+            }
+        ?>
+    </div>
     
     <form action="../controlador/login.php" method="post">
 
@@ -25,4 +33,5 @@
     </form>
 </form>
 </body>
+
 </html>

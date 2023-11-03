@@ -19,7 +19,7 @@ if(isset($_POST['password1'] , $_POST['password2'])){
         modificarContrasenya($password,$_SESSION['id']);
         
         sleep(3);
-        header("Location: ../vista/login.vista.php");
+        header("Location: ../vista/login.vista.php?error=Contrasenya canviada correctament");
     }else{
         echo "Les contrasenyes no coincideixen";
     }
