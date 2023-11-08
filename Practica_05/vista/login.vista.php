@@ -21,21 +21,24 @@
             }
         ?>
     </div>
-    
-    <form action="../controlador/login.php" method="post">
 
-        <input type="email" name="email"> <label for="email">email</label><br>
-        <input type="password" name="password"> <label for="password">password</label><br>
-        <input type="submit" name="submit" value="login"> 
-        <!-- Redirecció a recuperar contrasenya per enviar un correu -->
-       <a href="../vista/recuperarContrasenya.vista.php"> <button type="button">He olvidat la contrasenya</button></a>
-       <!-- Redirecció a vista usuari anònim  -->
-        <a href="../vista/index.php"><button type="button">cancel·lar</button></a> 
-        <div>
-            <div class="g-recaptcha" data-sitekey="6LeQdv4oAAAAAJQZv8U35loEEv0cp-LlOYA881_9"></div>
-            
-        </div>
-    </form>
+    <div class="form">
+
+        <form action="../controlador/login.php" method="post">
+                
+            <input type="email" name="email"> <label for="email">email</label><br>
+            <input type="password" name="password"> <label for="password">password</label><br>
+            <input type="submit" name="submit" value="login"> 
+            <!-- Redirecció a recuperar contrasenya per enviar un correu -->
+            <a href="../vista/recuperarContrasenya.vista.php"> <button type="button">He olvidat la contrasenya</button></a>
+            <!-- Redirecció a vista usuari anònim  -->
+            <a href="../vista/index.php"><button type="button">cancel·lar</button></a> 
+            <div class="capcha">
+                <div class="g-recaptcha" data-sitekey="6LeQdv4oAAAAAJQZv8U35loEEv0cp-LlOYA881_9"></div>
+                
+            </div>
+        </form>
+    </div>
 </form>
 </body>
 

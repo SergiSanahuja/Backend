@@ -16,8 +16,8 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Insertar article</h3>
-                        <p>Afageix el teu article.</p>
+                        <h3>Modificar article</h3>
+                        
                         <form action="../controlador/modificar.php" method="post" class="requires-validation" novalidate>                        
                         
                             <div class="col-md-13">
@@ -26,7 +26,7 @@
                                    
 
                                 </div>
-                                <textarea name="article" id="article" cols="30" rows="10"></textarea>                  
+                                <textarea name="article" id="article" cols="30" rows="10" placeholder="Text"></textarea>                  
 
                                 <div class="form-button mt-3">
                                 <button id="submit" type="submit" class="btn btn-primary" onclick="">Insertar</button>

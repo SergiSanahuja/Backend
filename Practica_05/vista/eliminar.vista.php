@@ -22,7 +22,7 @@
                         <form action="../controlador/eliminar.php" method="post" class="requires-validation" novalidate>                        
                         
                             <div class="col-md-13">
-                                <input type="text" name="id" id="id">                 
+                                <input type="text" name="id" id="id" placeholder="id">                 
 
                                 <div class="form-button mt-3">
                                 <button id="submit" type="submit" class="btn btn-primary" onclick="">Submit</button>
