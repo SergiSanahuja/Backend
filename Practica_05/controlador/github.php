@@ -1,5 +1,6 @@
 <?php
-require_once '../Controller/globalfunctions.php';
+require_once '../model/model.php';
+require_once '../controloador/globalfunctions.php';
 include '../hybridauth/src/autoload.php';
 
 /**
@@ -35,7 +36,7 @@ $config = [
 ];
 
 $login = oauth($config);
-$pdo = basededades();
+$pdo = connection();
 $email = $login->email;
 $username = $login->displayName;
 iniciSessioOauth($pdo, $email, $username);
