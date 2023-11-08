@@ -3,6 +3,11 @@
     session_start();
     require_once '../model/model.php';
     include_once '../vista/login.vista.php';
+
+
+    $idClient = "721913885421-o0stm2ab6r5tn5av6lekqs8o2068os5j.apps.googleusercontent.com";
+    $idSecretClient = "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";
+    $redirectUri = "http://localhost:8080/ProjecteFinal/controlador/login.php";
     
    
    
@@ -68,6 +73,12 @@
         
         
     }
+
+    
+
+
+
+
     
 }
     
