@@ -16,7 +16,7 @@
     }
     
     
-    /**ReCAPCHA************************** */
+    /*************************ReCAPCHA************************** */
 
     if(isset($_POST["submit"])){
         $ip = $_SERVER['REMOTE_ADDR'];
@@ -29,9 +29,7 @@
             header('Location: ../vista/login.vista.php?error=Has de fer el recaptcha');
             exit();
         }
-        
-
-      
+             
         
             if(isset($_POST['email']) && isset($_POST['password'])){
                 

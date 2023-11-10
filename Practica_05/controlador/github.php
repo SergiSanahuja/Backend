@@ -1,7 +1,5 @@
 <?php
-require_once '../model/model.php';
-require_once '../controloador/globalfunctions.php';
-include '../hybridauth/src/autoload.php';
+
 
 /**
  * 
@@ -24,14 +22,16 @@ include '../hybridauth/src/autoload.php';
  * function registreOauth($pdo, $email, $usuari){ 
  * }
 */
-
+define('ClientID', '1d8517f4f7e30a8ef684');
+define('ClientSecret','6c70b603df53df579df0c4e946bfd4962e8692a4');
+define('RedirectUri','https://localhost/Backend/Practiques/Practica_05/vista/login.index.vista.php');
 
 $config = [
-    'callback' => '../Controller/github_login.php',
+    'callback' => '../controler/callback.php',
 
     'keys' => [
-        'key' => '908be3d8eef100f80de6',
-        'secret' => '2ce0d287a846d0943e5d9522a7defc4bb6eebf5e',
+        'key' => '1d8517f4f7e30a8ef684',
+        'secret' => '6c70b603df53df579df0c4e946bfd4962e8692a4',
     ],
 ];
 
@@ -51,7 +51,9 @@ function alert(){
  * @return objecte amb les dades de l'usuari
  */
 function oauth($config){
-    $github = new Hybridauth\Provider\Github($config);
+    
+
+    $github = new Hybridauth\Provider\GitHub($config);
     $github->authenticate();
     $usuari = $github->getUserProfile();
     $github->disconnect();
