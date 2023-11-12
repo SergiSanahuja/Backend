@@ -16,5 +16,9 @@ Columnes
 1-Id
 2-Articles
 
-TODO:
-1- Crear el fitxer de recuperació de Contrasenya + les funcions que calguin
+Hi ha un problema a l'hora d'iniciar amb google que no em deixa agafar el correu de l'usuari però l'usuari es pot logar igualment
+
+usuari
+sergi@gmail.com
+contrasenya
+123
