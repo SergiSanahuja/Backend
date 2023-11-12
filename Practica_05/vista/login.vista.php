@@ -100,32 +100,38 @@ if(!isset($_SESSION['access_token']))
             <a href="../vista/recuperarContrasenya.vista.php"> <button type="button">He olvidat la contrasenya</button></a>
             <!-- Redirecció a vista usuari anònim  -->
             <a href="../vista/index.php"><button type="button">cancel·lar</button></a> 
+            
             <div class="capcha">
                 <div class="g-recaptcha" data-sitekey="6LeQdv4oAAAAAJQZv8U35loEEv0cp-LlOYA881_9"></div>                
             </div>
-            <div>          
+            <div data-v-44be7528="" class="dividerLine"><span data-v-44be7528=""></span> <p data-v-44be7528="">O bien continúa con</p> <span data-v-44be7528=""></span></div>
+            
+            <div class="panel panel-default">
+            <?php
+            if($login_button == '')
+            {
+                echo '<div class="panel-heading">Welcome User</div><div class="panel-body">';
+                echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
+                echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
+                echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
+                echo '<h3><a href="logout.php">Logout</h3></div>';
+            }
+            else
+            {
+                echo '<div align="center" id="customBtn" class="customGPlusSignIn">
+                        <span class="icon"></span>
+                        <span class="buttonText">'.$login_button.'</span>
+                    </div>';
+                
+            }
+            ?>
+            </div>          
         </form>
     </div>
-    <div class="container">
-    <br />
-    <h2>PHP Login using Google Account</h2>
-    <br />
-    <div class="panel panel-default">
-    <?php
-    if($login_button == '')
-    {
-        echo '<div class="panel-heading">Welcome User</div><div class="panel-body">';
-        echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
-        echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
-        echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
-        echo '<h3><a href="logout.php">Logout</h3></div>';
-    }
-    else
-    {
-        echo '<div align="center">'.$login_button . '</div>';
-    }
-    ?>
-    </div>
+    
+    
+    
+   
 </form>
 </body>
 

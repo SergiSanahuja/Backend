@@ -1,6 +1,6 @@
 <?php
     /********************Sergi Sanahuja******************** */
-    session_start();
+    //session_start();
     require_once '../model/model.php';
 
     $_SESSION['login'] = true;

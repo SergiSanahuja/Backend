@@ -17,10 +17,10 @@ function iniciSessioOauth($pdo, $email, $usuari){
     $resultat = $statmet->fetchAll();
     foreach($resultat as $fila){
         if($fila['correu'] == $email){            
-            registreOauth($pdo, $email, $usuari);           
+            header('Location: ../vista/login.vista.php');
         }else{
+            registreOauth($pdo, $email, $usuari);           
             
-            header('Location: ../vista/login.vista.php?error=No existeix l\'usuari');
         }
     }
 
