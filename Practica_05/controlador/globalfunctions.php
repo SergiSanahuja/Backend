@@ -1,5 +1,7 @@
 <?php
 /**
+ * Sergi Sanahuja
+ *
  * Funció per iniciar la sessió
  * @param $email string correu de l'Oauth/HybridAyth que es vol loguejar
  * @param $usuari string nom de l'usuari que es vol loguejar

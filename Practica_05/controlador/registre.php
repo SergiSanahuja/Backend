@@ -34,12 +34,9 @@
 
                     header("Location: ../vista/login.index.vista.php");
                 }
-            }else{
-                
+            }else{                
                 $Error['error'] = "Error en el registre, revisa les dades
                 recorda que el nom només pot contenir lletres, l'email ha de ser correcte i la contrasenya ha de contenir almenys una majúscula, una minúscula, un número i un mínim de 8 caràcters";
-
-                  
                
             }
             //$password = password_hash($password, PASSWORD_DEFAULT);

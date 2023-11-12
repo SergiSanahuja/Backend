@@ -1,4 +1,5 @@
 <?php
+// Sergi Sanahuja
     $idClient = '721913885421-o0stm2ab6r5tn5av6lekqs8o2068os5j.apps.googleusercontent.com';
     $idSecretClient = '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';
 
