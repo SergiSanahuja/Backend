@@ -26,7 +26,9 @@
 	<?php 
 		if(isset($_GET['error'])){
 			echo "<script>alert('".$_GET['error']."')</script>";
-		}
+		}		
+
+		echo "<script>alert('".$code."')</script>";
 	?>
 			<!-- Redirecció al fitxer per a fer el sesion_destroy i después redirecciona a la vista de usuari anònim   -->
 			<a href="../controlador/tencar_sesio.php" ><button type="button" class="user-anonymous tnb-signup-btn w3-bar-item w3-button w3-right ws-green ws-hover-green ga-top ga-top-signup">Exit</button></a>

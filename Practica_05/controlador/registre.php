@@ -9,9 +9,7 @@
     $email = isset($_POST['email'])? $_POST['email'] : null;
     $password = isset($_POST['password'])? $_POST['password'] : null;
 
-    
-
-    echo verificar($nom, $email, $password);
+    //echo verificar($nom, $email, $password);
     //Comprovem que el formulari s'ha enviat
     if($_SERVER['PHP_SELF']){
         //Comprovem que les dades siguin correctes

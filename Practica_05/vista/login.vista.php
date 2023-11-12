@@ -6,7 +6,8 @@
 //index.php
 
 //Include Configuration File
-include('../controlador/google.php');
+require_once('../vendor/autoload.php');
+require('../controlador/google.php');
 
 $login_button = '';
 
@@ -31,26 +32,12 @@ if(isset($_GET["code"]))
  
   $data = $google_service->userinfo->get();
 
- 
-  if(!empty($data['given_name']))
-  {
-   $_SESSION['user_first_name'] = $data['given_name'];
-  }
-
-  if(!empty($data['family_name']))
-  {
-   $_SESSION['user_last_name'] = $data['family_name'];
-  }
-
   if(!empty($data['email']))
   {
    $_SESSION['user_email_address'] = $data['email'];
   }
 
-  if(!empty($data['gender']))
-  {
-   $_SESSION['user_gender'] = $data['gender'];
-  }
+  
 
   if(!empty($data['picture']))
   {

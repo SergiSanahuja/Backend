@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2023 a las 15:21:30
+-- Tiempo de generación: 12-11-2023 a las 14:26:42
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pt04_sergi_sanahuja`
+-- Base de datos: `pt05_sergi_sanahuja`
 --
 CREATE DATABASE IF NOT EXISTS `pt05_sergi_sanahuja` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `pt05_sergi_sanahuja`;
@@ -70,8 +70,17 @@ CREATE TABLE `usuaris` (
   `id` int(11) NOT NULL,
   `Usuari` varchar(10) NOT NULL,
   `Contrasenya` varchar(500) NOT NULL,
-  `correu` varchar(30) NOT NULL
+  `correu` varchar(30) NOT NULL,
+  `Token` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuaris`
+--
+
+INSERT INTO `usuaris` (`id`, `Usuari`, `Contrasenya`, `correu`, `Token`) VALUES
+(9, 'sergi', '$2y$10$iWJvCGL0xZ7lRYmLP/DHz.KENW2yFBqCkra1jjge0hBkBHYvjX1gq', 'sergi@gmail.com', '6549248cb8967'),
+(13, 'eric', '$2y$10$7HJXyMk8wD76LJUguv4RLeGEwKA3p3gb.PJ9EKkCBpPWeO1PIags6', 'eric@gmail.com', '6545231d0beea');
 
 --
 -- Índices para tablas volcadas
@@ -103,7 +112,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT de la tabla `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
