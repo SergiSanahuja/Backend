@@ -13,6 +13,10 @@
     require_once '../vendor/autoload.php';
 
     //Make object of Google API Client for call Google API
+    
+    $_SESSION['login'] = true;
+
+    //Make object of Google API Client for call Google API
     $google_client = new Google_Client();
 
     //Set the OAuth 2.0 Client ID
