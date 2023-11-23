@@ -28,7 +28,7 @@
 			echo "<script>alert('".$_GET['error']."')</script>";
 		}		
 
-		echo "<script>alert('".$_SESSION['user_email_address']."')</script>";
+		
 		
 		
 	?>
