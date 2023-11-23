@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2023 a las 14:26:42
+-- Tiempo de generación: 23-11-2023 a las 20:06:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pt05_sergi_sanahuja`
+-- Base de datos: `pt06_sergi_sanahuja`
 --
-CREATE DATABASE IF NOT EXISTS `pt05_sergi_sanahuja` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pt05_sergi_sanahuja`;
+CREATE DATABASE IF NOT EXISTS `pt06_sergi_sanahuja` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `pt06_sergi_sanahuja`;
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,9 @@ CREATE TABLE `usuaris` (
 
 INSERT INTO `usuaris` (`id`, `Usuari`, `Contrasenya`, `correu`, `Token`) VALUES
 (9, 'sergi', '$2y$10$iWJvCGL0xZ7lRYmLP/DHz.KENW2yFBqCkra1jjge0hBkBHYvjX1gq', 'sergi@gmail.com', '6549248cb8967'),
-(13, 'eric', '$2y$10$7HJXyMk8wD76LJUguv4RLeGEwKA3p3gb.PJ9EKkCBpPWeO1PIags6', 'eric@gmail.com', '6545231d0beea');
+(13, 'eric', '$2y$10$7HJXyMk8wD76LJUguv4RLeGEwKA3p3gb.PJ9EKkCBpPWeO1PIags6', 'eric@gmail.com', '6545231d0beea'),
+(14, 'sergi', '$2y$10$0pH0GhmDHy8My2RXQSmZ9exZzOMWPJY8q0IKx8eu7XCogaCi8drt2', 's@gmail.com', ''),
+(15, 'sergi', '$2y$10$n6TEBJhYKZemdY11LOlCweNFVyGa2IqPIlDVu0Hx6QOJt6AfV0SBy', 'sergi10@gmail.com', '');
 
 --
 -- Índices para tablas volcadas
@@ -112,7 +114,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT de la tabla `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

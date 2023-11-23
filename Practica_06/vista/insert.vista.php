@@ -23,11 +23,11 @@
                             <div class="col-md-13">
                                 <textarea name="article" id="article" cols="30" rows="10"></textarea>                  
 
-                                <div class="form-button mt-3">
+                                    
                                     <!-- insertar article a la BD -->
                                 <button id="submit" type="submit" class="btn btn-primary" onclick="">Insertar</button>
                             </div>
-                        
+
 
                             <div class="form-button mt-3">
                                 <!-- Retornar a la vista de usuari login -->
@@ -44,7 +44,6 @@
 
                             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 insertar() ;
-
                             }
                         
                         ?>
