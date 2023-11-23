@@ -5,7 +5,7 @@
 
 function connection(){
     try{
-        $conection = new PDO('mysql:host=localhost;dbname=pt05_sergi_sanahuja', 'root', '');
+        $conection = new PDO('mysql:host=localhost;dbname=pt06_sergi_sanahuja', 'root', '');
         return $conection;
     } catch(Exception $e){
         echo "Error: " . $e->getMessage();
@@ -94,6 +94,19 @@ function connection(){
         echo "Error: " . $e->getMessage();
             die();
 }
+}
+
+//inserta una imatge a la base de dades
+function insertarImatge($nom_imatge){
+    try{
+        $conection = connection();
+        $sql = "INSERT INTO `imatges`(`ruta`) VALUES ( '$nom_imatge')";
+        $statmet = $conection->prepare($sql);
+        $statmet -> execute();
+    }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+        die();
+    }
 }
 
 //elimina un article de la base de dades

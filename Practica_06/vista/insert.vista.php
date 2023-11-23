@@ -18,12 +18,13 @@
                     <div class="form-items">
                         <h3>Insertar article</h3>
                         <p>Afageix el teu article.</p>
-                        <form action="../controlador/articles.php" method="post" class="requires-validation" novalidate>                        
+                        <form action="../controlador/articles.php" method="post" enctype="multipart/form-data" class="requires-validation" novalidate>                        
                         
                             <div class="col-md-13">
                                 <textarea name="article" id="article" cols="30" rows="10"></textarea>                  
 
-                                    
+                                <p class="text">Eleige una imagen</p>
+                                <input type="file" name="foto" id="foto">
                                     <!-- insertar article a la BD -->
                                 <button id="submit" type="submit" class="btn btn-primary" onclick="">Insertar</button>
                             </div>
@@ -44,6 +45,7 @@
 
                             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 insertar() ;
+                                Imatge();
                             }
                         
                         ?>
