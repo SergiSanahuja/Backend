@@ -10,8 +10,6 @@
     */
 
 
-
-
 function iniciSessioOauth($pdo, $email, $usuari){
     $sql = "SELECT * FROM `usuaris` WHERE `correu` = '$email'";
     $statmet = $pdo->prepare($sql);
@@ -28,8 +26,7 @@ function iniciSessioOauth($pdo, $email, $usuari){
 
 }
 
-
-   /** Funció per registrar l'usuari amb l'Oauth/HybridAuth
+ /** Funció per registrar l'usuari amb l'Oauth/HybridAuth
  * @param $pdo objecte de la base de dades
  * @param $email string correu de l'Oauth/HybridAyth que es vol registrar
  * @param $usuari string usuari de l'Oauth/HybridAyth que es vol registrar

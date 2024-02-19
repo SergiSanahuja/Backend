@@ -1,8 +1,8 @@
+use Google\Client as Google_Client; // Add this line
 <?php
 // Sergi Sanahuja
     $idClient = '4351398941-gt49q5use30gnsutae49d1g1a7nb30kr.apps.googleusercontent.com';
     $idSecretClient = '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';
-
 
     //start session on web page
     session_start();

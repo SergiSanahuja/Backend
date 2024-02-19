@@ -10,8 +10,6 @@
     <?php 
            require_once "../model/model.php";
     ?>
-
-
     <h2>Recuperar contrasenya</h2>
 
     <form action="../controlador/sendEmail.php" method="post">

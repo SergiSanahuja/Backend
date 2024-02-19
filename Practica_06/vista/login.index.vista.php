@@ -5,9 +5,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../estils/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">  
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../estils/estils.css"> <!-- feu referència al vostre fitxer d'estils -->
+
+
+	<!-- js -->
+	<script src="../javaScript/bootstrap.min.js"></script>
+    <script src="../javaScript/bootstrap.bundle.js"></script>
 	<title>Paginació</title>
 	
 	<script>
@@ -31,7 +37,7 @@
 	?>
 			<!-- Redirecció al fitxer per a fer el sesion_destroy i después redirecciona a la vista de usuari anònim   -->
 			<a href="../controlador/tencar_sesio.php" ><button type="button" class="user-anonymous tnb-signup-btn w3-bar-item w3-button w3-right ws-green ws-hover-green ga-top ga-top-signup">Exit</button></a>
-			
+	<a href="./configuracioUser.php"><button class="btn"></button></a>		
 	<div class="contenidor">	
 		<h1>Articles</h1>
 		<section class="articles"> <!--aqui guardem els articles-->

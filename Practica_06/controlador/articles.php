@@ -5,8 +5,7 @@ session_start();
 
 
 function insertar(){
-
-    
+  
 
     $article = isset($_POST['article'])? $_POST['article'] : null;
     
